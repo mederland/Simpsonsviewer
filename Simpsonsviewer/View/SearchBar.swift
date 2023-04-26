@@ -26,6 +26,7 @@ struct SearchBar: UIViewRepresentable {
         return Coordinator(searchText: $searchText)
     }
     
+    
     func makeUIView(context: UIViewRepresentableContext<SearchBar>) -> UISearchBar {
         let searchBar = UISearchBar(frame: .zero)
         searchBar.delegate = context.coordinator
@@ -40,3 +41,4 @@ struct SearchBar: UIViewRepresentable {
         uiView.text = searchText
     }
 }
+

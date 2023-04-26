@@ -8,19 +8,39 @@
 import SwiftUI
 
 struct CharacterDetailView: View {
+    @Environment(\.presentationMode) var presentationMode
     let character: Character
     
     var body: some View {
         VStack {
-            ScrollView{
-            Spacer()
-                Text(character.name )
-                    .font(.title3)
-                    .fontWeight(.ultraLight)
-                    .padding()
-
+            VStack{
+                ScrollView{
+                Spacer()
+                    Text(character.name )
+                        .font(.title)
+                        .foregroundColor(.black)
+                        .fontWeight(.ultraLight)
+                        .padding()
+                }
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .greatestFiniteMagnitude)
+        .background(Color.yellow.opacity(0.18))
+        .cornerRadius(24)
+        .padding(.horizontal, 2)
+        .padding(.bottom, 2)
+        .navigationBarBackButtonHidden(true)
         .navigationBarTitle(Text(character.name.split(separator: " ").first.map(String.init) ?? "" ), displayMode: .inline)
+        .navigationBarItems(
+            leading: EmptyView(),
+            trailing: Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }, label: {
+                Image(systemName: "arrow.uturn.backward.circle.fill")
+                    .foregroundColor(.yellow)
+                    .font(.title)
+                    .shadow(color: .white, radius: 1)
+            })
+        )
     }
 }

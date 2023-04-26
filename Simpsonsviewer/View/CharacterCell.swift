@@ -7,19 +7,6 @@
 
 import SwiftUI
 
-//struct CharacterCell: View {
-//    let character: Character
-//
-//    var body: some View {
-//        VStack(alignment: .leading) {
-//            Text(character.name.split(separator: " ").first.map(String.init) ?? "")
-//                .font(.headline)
-//            Text(character.description)
-//                .font(.subheadline)
-//                .foregroundColor(.gray)
-//        }
-//    }
-//}
 struct CharacterCell: View {
     let character: Character
     
