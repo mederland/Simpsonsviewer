@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct CharacterDetailView: View {
+    let character: Character
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+        VStack {
+            ScrollView{
+            Spacer()
+                Text(character.name )
+                    .font(.title3)
+                    .fontWeight(.ultraLight)
+                    .padding()
 
-struct CharacterDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        CharacterDetailView()
+            }
+        }
+        .navigationBarTitle(Text(character.name.split(separator: " ").first.map(String.init) ?? "" ), displayMode: .inline)
     }
 }

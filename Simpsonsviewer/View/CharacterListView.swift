@@ -8,19 +8,26 @@
 import SwiftUI
 
 struct CharacterListView: View {
+    @ObservedObject var viewModel: CharacterListViewModel
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            List(viewModel.filteredCharacters) { character in
+                NavigationLink(destination: CharacterDetailView(character: character)) {
+                    CharacterCell(character: character)
+                }
+            }
+            .navigationTitle("Simpsons Characters")
+            .searchable(text: $viewModel.searchText, placement: .navigationBarDrawer(displayMode: .always))
         }
-        .padding()
+        .onAppear {
+            viewModel.fetchCharacters()
+        }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct CharacterListView_Previews: PreviewProvider {
     static var previews: some View {
-        SimpsonView()
+        CharacterListView(viewModel: CharacterListViewModel(characterRepository: CharacterRepository(dataSource: DuckDuckGoCharacterDataSource(apiClient: APIClient().self as APIClientProtocol))))
     }
 }
