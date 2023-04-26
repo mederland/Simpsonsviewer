@@ -59,7 +59,7 @@ struct CharacterListView: View {
                 .background(Color.yellow.opacity(0.18))
                 .cornerRadius(6)
             }
-            .navigationTitle("Simpsons Characters")
+            .navigationTitle(Text("Simpsons Characters"))
             .searchable(text: $viewModel.searchText, placement: .navigationBarDrawer(displayMode: .always))
         }
         .onAppear {
