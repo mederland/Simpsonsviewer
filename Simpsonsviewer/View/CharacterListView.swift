@@ -56,7 +56,7 @@ struct CharacterListView: View {
                 NavigationLink(destination: CharacterDetailView(character: character)) {
                     CharacterCell(character: character)
                 }
-                .background(Color.yellow.opacity(0.18))
+                .background(Color.yellow.opacity(0.99))
                 .cornerRadius(6)
             }
             .navigationTitle(Text("Simpsons Characters"))

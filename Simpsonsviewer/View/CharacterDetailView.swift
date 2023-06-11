@@ -25,7 +25,7 @@ struct CharacterDetailView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .greatestFiniteMagnitude)
-        .background(Color.yellow.opacity(0.18))
+        .background(Color.yellow.opacity(0.99))
         .cornerRadius(24)
         .padding(.horizontal, 2)
         .padding(.bottom, 2)

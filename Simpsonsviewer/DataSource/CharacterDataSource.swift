@@ -13,7 +13,7 @@ protocol CharacterDataSourceProtocol {
 
 class DuckDuckGoCharacterDataSource: CharacterDataSourceProtocol {
     private let apiClient: APIClientProtocol
-    
+
     init(apiClient: APIClientProtocol) {
         self.apiClient = apiClient
     }
@@ -39,7 +39,5 @@ class DuckDuckGoCharacterDataSource: CharacterDataSourceProtocol {
             }
         }
     }
-
-
 }
 

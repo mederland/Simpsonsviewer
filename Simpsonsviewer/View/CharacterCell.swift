@@ -14,8 +14,10 @@ struct CharacterCell: View {
         VStack(alignment: .leading) {
             Text(getFirstName())
                 .font(.headline)
+                .foregroundColor(.black)
             Text(getLastName())
                 .font(.headline)
+                .foregroundColor(.black)
         }
     }
     
